@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-SESSION_FILE = '/home/flo/bin/.i3flow.session'
+SESSION_FILE = '/home/flo/i3flow/.i3flow.session'
 
 def get(parm):
     with open(SESSION_FILE, 'r') as f:
