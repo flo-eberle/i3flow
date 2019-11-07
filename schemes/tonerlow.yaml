@@ -1,0 +1,18 @@
+scheme: "tonerlow"
+author: "Flo Eberle"
+base00: "797979" # #797979 default background
+base01: "727272" # #727272 lighter background (status bar)
+base02: "d7d5d6" # #d7d5d6 selection background
+base03: "565656" # #565656 comments, invisibles
+base04: "000000" # #000000 dark foreground (status bar)
+base05: "232323" # #232323 default foreground
+base06: "ccccff" # #ccccff light foreground
+base07: "53495d" # #53495d light background
+base08: "523051" # #523051 variables
+base09: "523051" # #523051 constants
+base0A: "662020" # #662020 search text background
+base0B: "1f3e58" # #1f3e58 strings
+base0C: "352149" # #352149 regex, escaped chars
+base0D: "345849" # #345849 functions
+base0E: "5c0038" # #5c0038 keywords
+base0F: "3c071b" # #3c071b deprecations
