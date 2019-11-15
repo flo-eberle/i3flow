@@ -1,22 +1,18 @@
 #!/usr/bin/env python3
 
 # TODO: formatter for rofi
-# TODO: vim: colors_name
-# TODO: merge xrdb
-# TODO: reload i3
-# TODO: reload polybar
-# TODO: reload termite
-# TODO: reload vim
+# TODO: vim - colors_name
 
+import subprocess
 import yaml
 import utils.formatters
 
 SCHEMEPATH = '/home/flo/i3flow/schemes/tonerlow.yaml'
 
 CONFIG_FILES = {
-    'xresources': '/home/flo/i3flow/testing/.Xresources',
-    'termite': '/home/flo/i3flow/testing/termite.config',
-    'vim': '/home/flo/i3flow/testing/tonerlow.vim',
+    'xresources': '/home/flo/.Xresources',
+    'termite': '/home/flo/.config/termite/config',
+    'vim': '/home/flo/.vim/colors/tonerlow.vim',
 }
 
 with open(SCHEMEPATH, 'r') as f:
@@ -41,3 +37,9 @@ for key, value in CONFIG_FILES.items():
     print(f'Writing config for "{key}" to {value}')
     write_configs(key, value)
     print('Done!')
+
+
+# reload stuff to update configs
+subprocess.run(['xrdb', '-merge', '/home/flo/.Xresources'])
+subprocess.run(['i3-msg', 'restart'])
+subprocess.run(['killall', '-USR1', 'termite'])
