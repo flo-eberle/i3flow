@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# pull dotfiles
+echo ""
+echo "pulling dotfiles"
+echo "----------------"
+/usr/bin/git --git-dir=/home/flo/.cfg/ --work-tree=/home/flo pull origin master
+echo "----------------"
+
+# pull i3flow 
+echo ""
+echo "pulling i3flow"
+echo "--------------"
+/usr/bin/git --git-dir=/home/flo/i3flow/.git --work-tree=/home/flo/i3flow pull origin master
+echo "--------------"
+
+# pull wiki
+echo ""
+echo "pulling wiki"
+echo "------------"
+/usr/bin/git --git-dir=/home/flo/Documents/wiki/.git --work-tree=/home/flo/Documents/wiki pull origin master
+echo "------------"
+
+# sync taskwarrior
+echo ""
+echo "syncing taskwarrior"
+echo "-------------------"
+/usr/bin/task sync
+echo "-------------------"
