@@ -26,7 +26,11 @@ if len(sys.argv) > 1 and sys.argv[1] == 'switch':
 
 focused = i3.get_tree().find_focused()
 if mode == 'normal':
-    output = clipboarder(focused.name)
+    # cap output string if it's too long
+    out = focused.name
+    if len(out) >= 50:
+        out = out[0:50] + '...'
+    output = clipboarder(out)
 else:
     output = f'{clipboarder(focused.window_class)}   ---   {clipboarder(focused.window_instance)}'
 
