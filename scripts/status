@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# dotfiles
+echo ""
+echo "dotfiles"
+echo "----------------"
+/usr/bin/git --git-dir=/home/flo/.cfg/ --work-tree=/home/flo status -s
+echo "----------------"
+
+# i3flow 
+echo ""
+echo "i3flow"
+echo "--------------"
+/usr/bin/git --git-dir=/home/flo/i3flow/.git --work-tree=/home/flo/i3flow status -s
+echo "--------------"
+
+# wiki
+echo ""
+echo "wiki"
+echo "------------"
+/usr/bin/git --git-dir=/home/flo/Documents/wiki/.git --work-tree=/home/flo/Documents/wiki status -s
+echo "------------"
